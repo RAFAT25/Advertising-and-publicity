@@ -1,0 +1,249 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --main-color: #FFC107;
+    --secondry-color: #d3b662;
+    --third-color: #2c3e50;
+    --text-color: #8c8c8e;
+    --card-color: #2c2c38;
+    --blackColor: #000;
+}
+
+body {
+    font-family: 'Amiri', serif;
+    font-family: 'Amiri Quran', serif;
+    font-family: 'Aref Ruqaa', serif;
+    font-family: 'Gulzar', serif;
+    font-family: 'Lateef', serif;
+    font-family: 'Lobster', cursive;
+    font-family: 'Mada', sans-serif;
+    font-family: 'Markazi Text', serif;
+    font-family: 'Tajawal', sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #000;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ----- app ----- */
+
+.app {
+    padding: 8px;
+    overflow: hidden;
+}
+
+img {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+
+/* ----- header ----- */
+
+
+/* navbar */
+
+.navbar {
+    position: fixed;
+    min-height: 60px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    color: var(--blackColor);
+}
+
+#section img {
+    cursor: pointer;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.filter-button-group button {
+    color: var(--third-color);
+    border: 1px solid var(--third-color) !important;
+}
+
+.filter-button-group button:hover {
+    color: #000;
+}
+
+.filter-button-group button.active {
+    border-color: var(--third-color) !important;
+    background-color: #fff;
+    color: black;
+}
+
+.filter-button-group .category-btn,
+.filter-button-group .kind-btn {
+    gap: 10px;
+}
+
+.filter-button-group button {
+    border: 1px solid !important;
+}
+
+.none {
+    display: none;
+}
+.filter-button-group button {
+    transition: all 0.3s ease-in-out;
+}
+
+.filter-button-group button:hover {
+    transform: scale(1.1);
+}
+/* ----- تأثير الصور عند التحويم (تكبير وتوهج) ----- */
+img {
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ----- تأثير Fade-in وتحريك الصور عند تحميل الصفحة ----- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+img {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* ----- تأثير الأزرار عند التحويم (توهج ونبض) ----- */
+.filter-button-group button {
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-button-group button:hover {
+    background-color: var(--main-color);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.5);
+}
+
+/* ----- تأثير نبض الأزرار ----- */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.filter-button-group button:hover {
+    animation: pulse 0.6s infinite;
+}
+
+/* ----- تأثير عند الضغط على الأزرار (تصغير خفيف) ----- */
+.filter-button-group button:active {
+    transform: scale(0.95);
+}
+
+/* ----- تأثير ظهور الأزرار عند تحميل الصفحة (انزلاق) ----- */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.filter-button-group button {
+    animation: slideIn 0.8s ease-out;
+}
+/* ----- تنسيق المودال الأساسي ----- */
+.modal-content {
+    background-color: var(--card-color);
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* ----- تأثير الظهور الناعم عند فتح المودال ----- */
+.modal.fade .modal-dialog {
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.modal.show .modal-dialog {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* ----- تأثير تظليل الخلفية عند فتح المودال ----- */
+.modal-backdrop.show {
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* ----- تحسين زر الإغلاق ----- */
+.modal-header .btn-close {
+    filter: invert(1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.modal-header .btn-close:hover {
+    transform: scale(1.2);
+}
+
+/* ----- تحسين أزرار المودال ----- */
+.modal-footer .btn {
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.modal-footer .btn:hover {
+    background-color: var(--secondry-color);
+    transform: translateY(-3px);
+}
+
+/* ----- تحسين العنوان داخل المودال ----- */
+.modal-title {
+    font-weight: bold;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+/* ----- تأثير عند الضغط على زر الإغلاق ----- */
+.modal-header .btn-close:focus {
+    box-shadow: none;
+}

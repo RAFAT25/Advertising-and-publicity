@@ -1,0 +1,515 @@
+:root {
+    --main-color: #FFC107;
+    --secondry-color: #d3b662;
+    --third-color: #2c3e50;
+    --text-color: #8c8c8e;
+    --card-color: #2c2c38;
+}
+
+body {
+    color: #ccc;
+}
+
+a {
+    color: #ccc;
+}
+
+a:hover {
+    color: var(--secondry-color);
+    /* text-decoration: underline; */
+}
+
+.form-control:focus {
+    color: var(--text-color);
+    caret-color: var(--main-color);
+    background-color: var(--bs-form-control-bg);
+    border-color: var(--main-color);
+    outline: 0;
+    box-shadow: 0 0 0 0.05rem var(--secondry-color);
+}
+
+.form-check-input:checked {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.form-check-input:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 0 0.12rem #ffc10767;
+}
+
+
+/* ----- container ----- */
+
+.app {}
+
+
+/* ---- header ---- */
+
+
+/* navbar */
+
+.app-cloth#container,
+
+/* .container-fluid, */
+
+.navbar.bg-primary,
+.swiper-pagination.bg-secondary {
+    box-shadow: 0 1px 4px 0 rgb(15 15 20 / 10%);
+    background-color: transparent !important;
+    background: linear-gradient(159deg, rgba(37, 37, 50, 0.98) 0%, rgba(35, 35, 45, 0.98) 100%);
+}
+
+.navbar.bg-body-tertiary {
+    background: #191923 !important;
+}
+
+.navbar.bg-body-tertiary .container {
+    background: linear-gradient(159deg, rgba(37, 37, 50, 0.98) 0%, rgba(35, 35, 45, 0.98) 100%);
+}
+
+.navbar-brand,
+.get-us a,
+.get-us svg {
+    color: var(--main-color);
+}
+
+.navbar-brand:hover,
+.get-us a:hover,
+.get-us svg:hover,
+.navbar-brand:focus,
+.get-us a:focus,
+.get-us svg:focus {
+    color: var(--secondry-color);
+}
+
+.search-form {
+    background: #19192381;
+}
+
+.search-form button {
+    border-color: var(--main-color);
+}
+
+.search-form input[type="search"] {
+    caret-color: var(--main-color);
+}
+
+.search-form input[type="search"]:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 0 0.25rem #f6b8004f;
+}
+
+.search-form #close {
+    color: var(--main-color);
+}
+
+.search-form #close:hover,
+.search-form #close:focus {
+    color: var(--secondry-color);
+}
+
+
+/* navbar end */
+
+
+/* ads blcok */
+
+.ads-block {
+    margin-top: 50px;
+}
+
+.ads-text,
+.ads-img {
+    height: 150px;
+    overflow: hidden;
+}
+
+.ads-text {
+    right: 0;
+    padding: 5px 8% 5px 0 !important;
+    animation: left-right 10s linear infinite;
+    -webkit-animation: left-right 10s linear infinite;
+}
+
+.ads-text::before {
+    background-color: var(--secondry-color);
+}
+
+.ads-text::after {
+    background-color: var(--secondry-color);
+}
+
+.ads-text {
+    background-color: var(--third-color);
+}
+
+.ads-img {
+    background-color: var(--secondry-color);
+}
+
+
+/* ads blcok end */
+
+
+/* dropmenu */
+
+.navbar-toggler {
+    border-color: var(--text-color);
+}
+
+.navbar .ref a {
+    color: var(--text-color);
+}
+
+.navbar .ref a h4:hover,
+.navbar .ref a h4:focus {
+    color: var(--secondry-color);
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:hover {
+    box-shadow: initial;
+    border-color: var(--text-color);
+}
+
+.navbar-toggler:focus .toggler-icon,
+.navbar-toggler:hover .toggler-icon {
+    color: var(--secondry-color);
+}
+
+.navbar-toggler .toggler-icon {
+    color: var(--text-color);
+    border: none;
+}
+
+.city::before,
+.street::before {
+    color: var(--main-color);
+}
+
+.city span,
+.street span,
+.places span {
+    color: var(--text-color);
+}
+
+.places a {
+    color: var(--main-color);
+}
+
+.places a:hover,
+.places a:focus {
+    color: var(--secondry-color);
+}
+
+
+/* dropmenu end */
+
+
+/* ---- header end ---- */
+
+
+/* ---- content ---- */
+
+
+/* card  */
+
+.cloth-content .card.bg-success {
+    background-color: var(--card-color) !important;
+    box-shadow: 0 1px 4px 0 rgba(90, 89, 89, 0.9);
+}
+
+.card-footer .add-to-fav.active {
+    color: var(--main-color);
+}
+
+.cloth-content .card-footer .footer-ref::before {
+    background-color: var(--text-color);
+}
+
+.cloth-content .card-footer .user-name {
+    color: var(--secondry-color);
+}
+
+.cloth-content .card-footer .place-name {
+    color: var(--text-color);
+}
+
+
+/* card end */
+
+
+/* ---- content  end ---- */
+
+
+/* pagination */
+
+.pagination .page-link {
+    background-color: transparent;
+    border-color: var(--text-color);
+    color: var(--main-color);
+}
+
+.pagination .page-link:focus {
+    box-shadow: 0px 0px 4px 3px var(--secondry-color);
+}
+
+.page-item.disabled .page-link {
+    background-color: var(--text-color);
+    color: var(--card-color);
+}
+
+.page-item.active .page-link {
+    background-color: var(--third-color);
+    color: var(--main-color);
+}
+
+
+/* pagination end */
+
+
+/* footer */
+
+footer {
+    background-color: var(--third-color)
+}
+
+footer p.text-secondary {
+    color: var(--text-color) !important;
+}
+
+footer .content a {
+    color: var(--secondry-color);
+}
+
+footer .content p span {
+    color: var(--text-color);
+}
+
+
+/* social */
+
+footer .social.border-top {
+    border-top-color: var(--text-color) !important;
+}
+
+footer .social p {
+    border-color: var(--secondry-color);
+    color: var(--secondry-color);
+}
+
+footer .social .links svg,
+.modal-header .social-share svg {
+    border-color: var(--secondry-color);
+    color: var(--secondry-color);
+}
+
+footer .content a:hover,
+footer .social p:hover,
+footer .social .links svg:hover,
+.modal-header .social-share svg:hover,
+.modal-header .social-share svg:focus,
+footer .content a:focus,
+footer .social p:focus,
+footer .social .links svg:focus {
+    color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+
+/* footer end */
+
+
+/* ****** category & kind page ****** */
+
+.section-title::before {
+    background-color: var(--text-color);
+}
+
+.section-title::after {
+    background: linear-gradient(159deg, rgba(37, 37, 50, 0.98) 0%, rgba(35, 35, 45, 0.98) 100%);
+}
+
+
+/* ****** category & kind ****** */
+
+
+/* slider-navigation*/
+
+.slider-navigation svg {
+    color: var(--secondry-color);
+}
+
+.slider-navigation svg:hover,
+.slider-navigation svg:focus {
+    color: var(--main-color);
+}
+
+
+/* swiper-pagination */
+
+.swiper-pagination span {
+    background-color: var(--secondry-color);
+}
+
+.swiper-pagination span:hover,
+.swiper-pagination span:focus {
+    background-color: var(--main-color);
+}
+
+.swiper-pagination.bg-secondary span {
+    border-color: var(--main-color);
+}
+
+
+/* ****** details page ****** */
+
+.product-detail-img svg,
+.product-img-categorys-phone .fa-share-nodes {
+    color: var(--main-color);
+    background-color: var(--card-color);
+}
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.241);
+}
+
+.modal-header {
+    border-color: var(--main-color);
+    background-color: rgba(0, 0, 0, 0.241);
+}
+
+.modal-header button {
+    background-color: transparent;
+    border: none;
+}
+
+.modal-header button svg {
+    color: var(--secondry-color);
+    font-size: 1.2rem;
+}
+
+.modal-header button svg:hover {
+    color: var(--main-color);
+}
+
+
+/* offer */
+
+.offer div {
+    border: 1px solid var(--secondry-color);
+    margin-left: 3px;
+}
+
+
+/* product-color */
+
+.product-color p,
+.product-size p,
+.review {
+    color: var(--main-color);
+}
+
+
+/* product-size  */
+
+.product-size span {
+    border-color: var(--text-color);
+}
+
+.product-size span:hover {
+    border-color: var(--main-color);
+}
+
+
+/* discription */
+
+.discription .text-start {
+    color: var(--text-color);
+}
+
+.discription .text-start:hover {
+    color: var(--secondry-color);
+}
+
+
+/* review */
+
+
+/* progress */
+
+.progress .pro {
+    background-color: var(--main-color);
+    border-radius: var(--bs-progress-border-radius);
+}
+
+.stars svg.text-light {
+    color: var(--text-color) !important;
+}
+
+
+/* customer-review */
+
+.customer-review .stars svg {
+    color: var(--main-color);
+}
+
+.customer-review p.title {
+    color: var(--main-color);
+}
+
+.customer-review .text .text-start {
+    color: var(--text-color);
+}
+
+
+/* ****** details page end ****** */
+
+
+/* ****** login and all register pages  ****** */
+
+
+/* register caulescent */
+
+header .steps .step {
+    border-color: var(--main-color);
+}
+
+header .steps .step.active {
+    color: #000;
+    background-color: var(--main-color);
+}
+
+
+/* ****** login and all register pages ****** */
+
+
+/* ---- container  end ---- */
+
+
+/* ................................ */
+
+
+/* footer {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+.footer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #2c3e50;
+  z-index: 0;
+  transform: skewY(11deg);
+  transform-origin: top left;
+  -webkit-transform: skewY(11deg);
+  -moz-transform: skewY(11deg);
+  -ms-transform: skewY(11deg);
+  -o-transform: skewY(11deg);
+} */
