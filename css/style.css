@@ -66,10 +66,11 @@ img {
     top: 0;
     z-index: 1000;
     color: var(--blackColor);
+    margin-bottom: 15px;
    
 }
 .navbar a img{
-     width: 50;
+     width: 25%;
      height: auto;
 }
 
