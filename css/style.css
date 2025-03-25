@@ -32,6 +32,9 @@ body {
 a {
     text-decoration: none;
 }
+span{
+    color: #f4f6f9;
+}
 
 
 /* ----- app ----- */
