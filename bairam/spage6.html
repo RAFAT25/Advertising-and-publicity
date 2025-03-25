@@ -356,12 +356,26 @@
 
                                 // Download the processed image.
                                 let downloadImage = (img_name) => {
-                                    let a = document.createElement('a');
-                                    a.href = canvas.toDataURL("image/png");
-                                    a.download = img_name;
-                                    document.body.appendChild(a);
-                                    a.click();
-                                }
+    canvas.toBlob((blob) => {
+        if (window.navigator.msSaveOrOpenBlob) {
+            // دعم لإنترنت إكسبلورر
+            window.navigator.msSaveOrOpenBlob(blob, img_name);
+        } else {
+            let a = document.createElement('a');
+            let url = URL.createObjectURL(blob);
+            a.href = url;
+            a.download = img_name;
+            document.body.appendChild(a);
+            a.click();
+
+            // تنظيف الذاكرة
+            setTimeout(() => {
+                URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            }, 100);
+        }
+    }, "image/png");
+};
                             }
 
                             document.querySelector(".result").innerHTML = localStorage.getItem("textValue");
