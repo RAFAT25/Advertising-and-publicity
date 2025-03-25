@@ -194,6 +194,58 @@ showAllCAndF(allKindBtn, allKind)
 // visitor counter function
 // countVisit();
 
+// Image loading optimization
+document.addEventListener('DOMContentLoaded', function() {
+    // Add loading spinner to the page
+    const spinner = document.createElement('div');
+    spinner.className = 'loading-spinner';
+    document.body.appendChild(spinner);
+
+    // Show spinner while images are loading
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    let loadedImages = 0;
+
+    images.forEach(img => {
+        img.addEventListener('load', () => {
+            loadedImages++;
+            if (loadedImages === images.length) {
+                spinner.style.display = 'none';
+            }
+        });
+
+        img.addEventListener('error', () => {
+            loadedImages++;
+            if (loadedImages === images.length) {
+                spinner.style.display = 'none';
+            }
+        });
+    });
+
+    // Preload critical images
+    const preloadImages = [
+        './image/شعار_برنامج_الإسكان_السعودي.png'
+    ];
+
+    preloadImages.forEach(src => {
+        const img = new Image();
+        img.src = src;
+    });
+});
+
+// Add loading state to image containers
+document.addEventListener('DOMContentLoaded', function() {
+    const imageContainers = document.querySelectorAll('.image-container');
+    
+    imageContainers.forEach(container => {
+        const img = container.querySelector('img');
+        if (img) {
+            container.classList.add('loading');
+            img.addEventListener('load', () => {
+                container.classList.remove('loading');
+            });
+        }
+    });
+});
 
 // add active class function 
 function addActiveClass(list) {
