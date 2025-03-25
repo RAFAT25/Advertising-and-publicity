@@ -68,6 +68,10 @@ img {
     color: var(--blackColor);
    
 }
+.navbar a img{
+     width: 50;
+     height: auto;
+}
 
 #section img {
     cursor: pointer;
