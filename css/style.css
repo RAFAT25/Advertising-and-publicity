@@ -32,7 +32,7 @@ body {
 a {
     text-decoration: none;
 }
-span{
+.container-fluid span{
     color: #f4f6f9;
 }
 
