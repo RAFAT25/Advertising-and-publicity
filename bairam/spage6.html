@@ -92,9 +92,9 @@
                             color: rgb(255, 251, 251);
                             position: absolute;
                             /* top: 106px; */
-                            bottom: 38.7px;
-                            left: 98px;
-                            font-size: 7px;
+                            bottom: 144.7px;
+                            left: 95px;
+                            font-size: 12px;
                             background: transparent;
                             width: 100px;
                             text-align: center;
@@ -319,7 +319,7 @@
                                     let fnt = window.getComputedStyle(textContainer).font;
 
                                     // Assign text properties to the context.
-                                     ctx.font = "bold 70px Arial"; // 👈 حجم الخط 40px ونوعه Arial
+                                     ctx.font = "bold 180px Arial"; // 👈 حجم الخط 40px ونوعه Arial
                                     ctx.fillStyle = "#FFFFFF"
                                     ctx.textAlign = txtAlign;
 
@@ -334,7 +334,7 @@
                                     if (txtAlign === 'center') {
                                         x = center + left;
                                     }
-                                    x-=50;
+                                    x+=2580;
 
                                     // Get the text (it can a word or a sentence) to write over the image.
                                     let str = t.replace(/\n\r?/g, '<br />').split('<br />');
@@ -348,7 +348,7 @@
                                             .replace('<br>', '')
                                             .replace(';', ''),
                                             x,
-                                            parseInt(paddingTop, 10) + parseInt(top, 10) - 170 + 10 + (i * 15));
+                                            parseInt(paddingTop, 10) + parseInt(top, 10) + 300 + 10 + (i * 15));
                                     }
 
                                     // document.body.append(canvas);  // Show the image with the text on the Canvas.

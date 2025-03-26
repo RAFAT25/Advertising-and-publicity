@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Aref+Ruqaa:wght@400;700&family=Gulzar&family=Lateef:wght@200;300;400;500;600;700;800&family=Lobster&family=Mada:wght@200;300;400;500;600;700;900&family=Markazi+Text:wght@400;500;600&family=Tajawal:wght@400;500&display=swap"
         rel="stylesheet">
     <script async src="https://api.countapi.xyz/hit/yunos-card.netlify.app/4b1774d5-96c7-4603-867a-51c26d929f2e?callback=websiteVisits"></script>
-    <title>yunos-card</title>
+    <title>برنامج اللإسكان</title>
 </head>
 
 <body dir="rtl">
@@ -25,13 +25,12 @@
     <div class="app">
         <div class="container-fluid">
             <!-- navbar-->
-            <nav class="navbar bg-white">
+            <nav class="navbar bg-black">
                 <div class="container-fluid">
                     <a class='navbar-brand' href='/'>
-                        <img src="../image/logo yunos-1.png" alt="" style="width: 100px;">
-                    </a>
+                        <a href="/"> <img src="../image/شعار_برنامج_الإسكان_السعودي.png" alt="شعار برنامج الإسكان" loading="lazy" width="150" height="50"></a>
                     <span style="font-family: revert;">
-				المصمم عيسئ عقلان
+				برنامج اللإسكان
 			</span>
                 </div>
             </nav>
@@ -48,10 +47,14 @@
                     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
                     <style>
+                         @font-face {
+                            font-family: FontOne;
+                            src: url(../font/TSDeniz-Black.otf),format('otf')
+                         }
                         .mainContainer {
                             position: relative;
                             padding: 0;
-                            width: 300px;
+                            width: 500px;
                             height: 300px;
                             display: inline-block;
                             margin: 0 auto;
@@ -90,16 +93,16 @@
                         }
                         
                         #test {
-                            color: rgb(255, 251, 251);
+                            color: #6BCEF7;
                             position: absolute;
                             /* top: 106px; */
-                            bottom: 57.7px;
-                            left: 100px;
-                            font-size: 7px;
+                            bottom: 55.7px;
+                            left: 70px;
+                            font-size: 10px;
                             background: transparent;
-                            width: 100px;
+                            width: 200px;
                             text-align: center;
-                            font-weight: bold;
+                            font-family: 'FontOne';
                         }
                         span{
                             font-family: revert;
@@ -199,7 +202,7 @@
                         <!--The parent container, image and container for text (to place over the image)-->
                         <div class="mainContainer" id='mainContainer'>
                             <!--The default image. You can select a different image too.-->
-                            <img src="../image/تهنئة رمضان 1.png" id="myimage" alt="" class="img">
+                            <img src="../image/٣.jpg" id="myimage" alt="" class="img">
 
                             <!--The text, which is also draggable.-->
                             <div class="result" id='theText' onmousedown='this.style.border = "dashed 2px #FF7F27";' style="font-family: inherit;">sample text</div>
@@ -321,8 +324,8 @@
                                     let fnt = window.getComputedStyle(textContainer).font;
 
                                     // Assign text properties to the context.
-                                     ctx.font = "bold 70px Arial"; // 👈 حجم الخط 40px ونوعه Arial
-                                    ctx.fillStyle = "#FFFFFF"
+                                     ctx.font = "bold 180px FontOne"; // 👈 حجم الخط 40px ونوعه Arial
+                                    ctx.fillStyle = "#6BCEF7"
                                     ctx.textAlign = txtAlign;
 
                                     // Now, we need the coordinates of the text.
@@ -336,7 +339,7 @@
                                     if (txtAlign === 'center') {
                                         x = center + left;
                                     }
-                                    x-=50;
+                                    x+=1280;
 
                                     // Get the text (it can a word or a sentence) to write over the image.
                                     let str = t.replace(/\n\r?/g, '<br />').split('<br />');
@@ -350,7 +353,7 @@
                                             .replace('<br>', '')
                                             .replace(';', ''),
                                             x,
-                                            parseInt(paddingTop, 10) + parseInt(top, 10) - 300 + 10 + (i * 15));
+                                            parseInt(paddingTop, 10) + parseInt(top, 10)+ 1390 + (i * 15));
                                     }
 
                                     // document.body.append(canvas);  // Show the image with the text on the Canvas.
@@ -358,12 +361,26 @@
 
                                 // Download the processed image.
                                 let downloadImage = (img_name) => {
-                                    let a = document.createElement('a');
-                                    a.href = canvas.toDataURL("image/png");
-                                    a.download = img_name;
-                                    document.body.appendChild(a);
-                                    a.click();
-                                }
+    canvas.toBlob((blob) => {
+        if (window.navigator.msSaveOrOpenBlob) {
+            // دعم لإنترنت إكسبلورر
+            window.navigator.msSaveOrOpenBlob(blob, img_name);
+        } else {
+            let a = document.createElement('a');
+            let url = URL.createObjectURL(blob);
+            a.href = url;
+            a.download = img_name;
+            document.body.appendChild(a);
+            a.click();
+
+            // تنظيف الذاكرة
+            setTimeout(() => {
+                URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            }, 100);
+        }
+    }, "image/png");
+};
                             }
 
                             document.querySelector(".result").innerHTML = localStorage.getItem("textValue");
@@ -378,19 +395,19 @@
 
             </div>
         </div>
-        <footer class="mt-3 py-2" style="background-color: #191923;margin-bottom: -16px;">
+        <footer class="mt-3 py-2" style="background-color: #000;margin-bottom: -16px;">
             <div class="logo text-center">
                 <a class='navbar-brand' href='/'>
-                    <img src="../image/logo yunos 2.png" alt="" style="width: 100px;">
+                    <img src="../image/شعار_برنامج_الإسكان_السعودي.png" alt="" style="width: 130px;">
                 </a>
                 <p class="text-uppercase border-secondary border-bottom px-2 m-auto mt-2 pb-1" style="width: fit-content; letter-spacing: 5px;">we in social</p>
                 <div class="social my-3 ms-3" dir="ltr">
                     <div class="container ">
-
+    
                         <div class="text-center">
-                            <a href="https://twitter.com/yunos_sarhan" class="me-4"><i class="fab fa-twitter fa-2x link-light border-bottom border-primary pb-1"></i></a>
-                            <a href="https://instagram.com/yunos_sarhan" class="me-4"><i class="fab fa-instagram fa-2x link-light border-bottom border-danger pb-1"></i></a>
-                            <a href="https://wa.me/772735762" class="me-4"><i class="fab fa-whatsapp fa-2x link-light border-bottom border-success pb-1"></i></a>
+                            <a href="https://twitter.com/saudivision2030" target="_self" class="me-4"><i class="fab fa-twitter fa-2x link-light border-bottom border-primary pb-1"></i></a>
+                            <a href="https://www.instagram.com/saudivision2030/" target="_self" class="me-4"><i class="fab fa-instagram fa-2x link-light border-bottom border-danger pb-1"></i></a>
+                            <a href="https://www.facebook.com/saudivision2030/" target="_self" class="me-4"><i class="fab fa-facebook fa-2x link-light border-bottom border-success pb-1"></i></a>
                         </div>
                     </div>
                 </div>
