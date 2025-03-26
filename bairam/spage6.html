@@ -47,6 +47,10 @@
                     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
                     <style>
+                        @font-face {
+                            font-family: FontOne;
+                            src: url(../font/TSDeniz-Bold.otf),format('otf')
+                         }
                         .mainContainer {
                             position: relative;
                             padding: 0;
@@ -85,7 +89,7 @@
                             cursor: move;
                             width: 490px;
                             text-align: center;
-                            font-weight: bold;
+                            font-family: 'FontOne';
                         }
                         
                         #test {
@@ -319,7 +323,7 @@
                                     let fnt = window.getComputedStyle(textContainer).font;
 
                                     // Assign text properties to the context.
-                                     ctx.font = "bold 180px Arial"; // 👈 حجم الخط 40px ونوعه Arial
+                                     ctx.font = "bold 180px FontOne"; // 👈 حجم الخط 40px ونوعه Arial
                                     ctx.fillStyle = "#FFFFFF"
                                     ctx.textAlign = txtAlign;
 
